@@ -11,7 +11,7 @@
 </head>
 <body>
   
-<!-- <body>
+ <body>
   <div class="container5">
     
     <div class="box1">
@@ -19,19 +19,19 @@
     </div>
 
     <div class="box2">
-        <form action="">
+        <form action="" id="reg-form" enctype="multipart/form-data">
           <h2 class="sure">Sure <span class="chatter">Chatter</span></h2>
           <hr>
           <i class="fa-regular fa-horizontal-rule"></i>
 
-            <input type="text" placeholder="first name" class="inp">
-            <input type="text" placeholder="Last name" class="inp">
-            <input type="email" placeholder="Email" class="inp">
-            <input type="password" placeholder="************"class="inp" >
+            <input type="text" placeholder="first name" class="inp" name="first_name">
+            <input type="text" placeholder="Last name" class="inp" name="last_name">
+            <input type="email" placeholder="Email" class="inp" name="email ">
+            <input type="password" placeholder="************"class="inp" name="password">
             <div class="input-group">
-              <input type="file" class="form-control inp" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload">
+              <input type="file" class="form-control inp" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload" name="profile_img">
             </div>
-            <input type="button" value="Register" class="inp butt">
+            <input type="submit" value="Register" class="inp butt">
             <p class="acct">already have an account? <span> <a href=""> Login</a></span> </p>
         </form>
     </div>
@@ -62,16 +62,8 @@
     
   
 
-  // code to display a name every 1s using setinterval
-//   function myname() {
-//     console.log("taiwo")
-//   }
-//   let abort = setInterval(myname,1000)
-
-// // using clearinterval stop it and display a clear msg
-//     clearInterval(abort);  
+  // code to display a name every 2s using setinterval then stop it when a btn is clicked
     
-
 let order = setInterval(() => {
   console.log('welcome to sureurl')
 }, 2000);
@@ -82,6 +74,30 @@ let order = setInterval(() => {
  }
 
 document.getElementById('interval').addEventListener('click', cancel)
+
+// registration request
+let myform = document.getElementById('reg-form');
+myform.addEventListener('submit',function(e){
+      e.preventDefault();
+      let allData = new FormData(this);
+
+      const options = {
+        method: "POST",
+        body: allData,
+      };
+
+      fetch('https://9398-102-67-1-96.eu.ngrok.io/surechatter/requests.php?register&s=submit_register',options) //This is a fetch promise
+        .then(function(myresp) {
+          console.log(myresp)
+         // return myresp.json()
+        })
+        .then(function(output){
+          console.log(output);
+        })
+
+});
+
+// let allData = new FormData
   </script>
 </body>
    </html>
