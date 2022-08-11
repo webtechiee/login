@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://kit.fontawesome.com/dff69f73a0.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+  
+ <body>
+  <div class="container5">
+    
+    <div class="box1">
+        <img src="assets/image/chat2.jpg" alt="">
+    </div>
+
+    <div class="box2">
+        <form action="" id="reg-form" enctype="multipart/form-data"> <!--use this attribute when you re working with files -->
+          <h2 class="sure">Sure <span class="chatter">Chatter</span></h2>
+          <hr>
+          <i class="fa-regular fa-horizontal-rule"></i>
+            <div class="error hidden">error message</div>
+            <div class="success hidden">success message</div>
+            <input type="text" placeholder="first name" class="inp" name="first_name">
+            <input type="hidden" value="46778" name="username">
+            <input type="text" placeholder="Last name" class="inp" name="last_name">
+            <input type="email" placeholder="Email" class="inp" name="email">
+            <input type="password" placeholder="************"class="inp" name="password">
+            <div class="input-group">
+              <input type="file" class="form-control inp" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload" name="profile_img">
+            </div>
+            <input type="submit" value="Register" class="inp butt">
+            <p class="acct">already have an account? <span> <a href=""> Login</a></span> </p>
+        </form>
+    </div>
+
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script> -->
+  <!-- <button id="time-btn">stop display</button> -->
+  <p id="hbd"></p>
+<button id="interval">cancel</button>
+  <script>
+    // setTimeout creates a delay b4 the item displays while setinterval repeats a fun witch a time interval
+
+    // setTimeout(function sub(){
+    //   console.log('subscribe')
+    // },8000)
+
+    // create a timer then make it cancel when a button is clicked
+    //  let timer = setTimeout(action,4000);
+
+    //  function action(){
+    //   document.getElementById('hbd').innerHTML='happy birthday';
+    //  };
+    
+    //    function clear(){
+    //     clearTimeout(timer);
+    //     console.log('its been çleared')
+    //    } 
+    // document.getElementById('time-btn').addEventListener('click',clear)
+    
+  
+
+  // code to display a name every 2s using setinterval then stop it when a btn is clicked
+    
+let order = setInterval(() => {
+  console.log('welcome to sureurl')
+}, 2000);
+
+ let cancel = function stop() {
+  clearInterval(order)
+  console.log('cancelled') 
+ }
+
+document.getElementById('interval').addEventListener('click', cancel)
+
+// registration request
+let myform = document.getElementById('reg-form');
+l
+myform.addEventListener('submit',function(e){
+      e.preventDefault();
+      let allData = new FormData(this); //library to submit diff types of input
+
+      const options = {
+        method: "POST",
+        body: allData,
+      };
+
+      fetch('https://5364-102-67-1-63.eu.ngrok.io/surechatter/requests.php?f=register&s=submit_register',options) //This is a fetch promise
+        .then(function(myresp) {
+          
+          return myresp.json()
+        })
+        .then(function(output){
+          
+        })
+
+});
+
+  </script>
+</body>
+   </html>
+            

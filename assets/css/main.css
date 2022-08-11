@@ -15,14 +15,17 @@
 }
 
 .box1{
-    
- height: 430px;
+    height: 450px;
+ height: auto;
  width: 500px;
+
 }
 
 .box2{
+    height: auto;
+    padding:0 15px 25px;
 background-color: white;
-height: 430px;
+height: 450px;
  width: 350px;
  padding: 15px;
 text-align: center;
@@ -60,7 +63,7 @@ span{
     padding: 10px;
 }
 img{
-height: 430px;
+height: 450px;
 border-top-left-radius: 7px;
  border-bottom-left-radius: 7px;
 }
@@ -109,4 +112,18 @@ td{
 
 .del-up{
     color: green;
+}
+
+.error{
+    padding: 10px 30px;
+    background-color: #ffcccb;
+}
+
+.success{
+    padding: 10px 30px;
+    background-color: #90ee90;
+}
+
+.hidden{
+    display: none;
 }
